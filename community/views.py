@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .models import Post
 
@@ -9,15 +8,6 @@ class PostList(ListView):
     model = Post
     ordering = '-pk'
 
+class PostDetail(DetailView):
+    model = Post
 
-
-def single_post_page(request, pk):
-    post = Post.objects.get(pk=pk) # 조건 만족하는 post 레코드 가져옴
-
-    return render(
-        request,
-        'community/single_post_page.html',
-        {
-            'post':post,
-        }
-    )
