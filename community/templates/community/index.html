@@ -9,7 +9,7 @@
     <p>트레이너, 그리고 운동을 사랑하는 사람들과 수다 떨어요!</p>
     <hr>
     {% for p in posts %}
-        <p>{{ p }}</p>
+        <p><a href="{{p.get_absolute_url}}">{{ p }}</a></p>
     {% endfor %}
 </body>
 </html>
