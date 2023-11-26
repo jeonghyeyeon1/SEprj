@@ -8,6 +8,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     image= models.ImageField(upload_to='community/images/%Y/%m/%d/', blank=True)
+    file_upload = models.FileField(upload_to='community/files/%Y/%m/%d/', blank=True)
     published_date = models.DateTimeField(blank=True, null=True)
     # <Post객체>.publish 입력시, 해당 객체의 published_date에 현재시간을 넣어주는 함수
 
