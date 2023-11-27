@@ -25,7 +25,7 @@
           <a class="nav-link" href="#">프로그램</a>
         </li>
           <li class="nav-item">
-              <a class="nav-link" href="./post_list.html">커뮤니티</a>
+              <a class="nav-link" href="/community/">커뮤니티</a>
           </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">스토어</a>
@@ -49,7 +49,9 @@
             <hr>
         <p>{{post.created_at}}</p>
             <hr>
-        <image class="img-fluid rounded" src="{{post.image.url}}" alt = ""></image>
+        {% if post.image %}
+            <image class="img-fluid rounded" src="{{post.image.url}}" alt = ""></image>
+        {% endif %}
         <p>{{post.content}}</p>
             <hr>
         <nav><a href="/community/"> 목록 </a></nav>  <!--아이콘으로 대체할것-->
